@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperatura/Cidade</h1>
+    <form id="cityForm">
+        <label for="city">Digite o nome da cidade</label>
+        <input type="text" id="city" maxlength="50" placeholder="São Paulo">
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="resultado">
+        <h2>Resultado:</h2>
+
+        <p id="name"></p>
+
+        <p id="region"></p>
+
+        <p id="lastUpdated"></p>
+
+        <img src="" alt="icon" id="weatherIcon">
+        <p id="condition"></p>
+
+        <p id="humidity"></p>
+
+        <p id="heatIndexCelcius"></p>
+
+        <p id="feelslikeCelcius"></p>
+
+        <p id="windKph"></p>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
