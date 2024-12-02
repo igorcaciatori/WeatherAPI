@@ -2,11 +2,12 @@ document.getElementById("cityForm").addEventListener('submit', async (event) => 
     event.preventDefault();
     const city = document.getElementById('city').value;
     const URL = ` http://api.weatherapi.com/v1/current.json?key=150cb0132d10454abd9192916242511&q=${city}&aqi=no&lang=pt`
+    
     try {
         const response = await fetch(URL);
 
         if (!response.ok) {
-            throw new Error("Erro ao buscar o CEP");
+            throw new Error("Erro ao buscar a cidade");
         }
         const data = await response.json();
         if (data.erro) {
@@ -19,7 +20,7 @@ document.getElementById("cityForm").addEventListener('submit', async (event) => 
         document.getElementById("weatherIcon").src = `${data.current.condition.icon}`;
         document.getElementById("condition").textContent = `Condição: ${data.current.condition.text}`;
         document.getElementById("humidity").textContent = `Umidade: ${data.current.humidity}%`;
-        document.getElementById("heatIndexCelcius").textContent = `Temperatura: ${data.current.temp_c}°C`;
+        document.getElementById("tempCelcius").textContent = `Temperatura: ${data.current.temp_c}°C`;
         document.getElementById("feelslikeCelcius").textContent = `Sensação térmica: ${data.current.feelslike_c}°C`;
         document.getElementById("windKph").textContent = `Vento: ${data.current.wind_kph} km/h`;
     } catch (e) {

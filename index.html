@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="font.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
-    <h1>Temperatura/Cidade</h1>
-    <form id="cityForm">
-        <label for="city">Digite o nome da cidade</label>
-        <input type="text" id="city" maxlength="50" placeholder="São Paulo">
-        <button type="submit">Buscar</button>
+
+<body class="flex flex-col items-center">
+    <h1 class="text-sky-900 text-4xl font-bold my-8 py-4 px-16 bg-sky-200 rounded-lg">CidadeClima</h1>
+    <form id="cityForm" class="bg-sky-200 w-[50%] rounded-lg flex flex-col">
+        <label for="city" class="text-sky-900 block mx-16 mt-4 mb-4 font-semibold">Digite o nome da cidade</label>
+        <input type="text" id="city" maxlength="50" placeholder="São Paulo" class="mx-16 block rounded py-1 pl-1 pr-8">
+        <button type="submit" class="px-8 py-1 bg-sky-900 text-sky-200 rounded-md mx-16 my-4">Buscar</button>
     </form>
-    <div id="resultado">
-        <h2>Resultado:</h2>
-
-        <p id="name"></p>
-
-        <p id="region"></p>
-
-        <p id="lastUpdated"></p>
-
-        <img src="" alt="icon" id="weatherIcon">
-        <p id="condition"></p>
-
-        <p id="humidity"></p>
-
-        <p id="heatIndexCelcius"></p>
-
-        <p id="feelslikeCelcius"></p>
-
-        <p id="windKph"></p>
-
+    <div id="resultado" class="flex flex-col items-center mt-16 bg-sky-200 w-[50%] rounded-xl mb-16">
+        <h2 class="self-start pt-4 pl-16 font-semibold text-sky-900 text-xl">Resultado:</h2>
+        <p id="name" class="text-sky-900 text-lg my-1"></p>
+        <p id="region" class="text-sky-900 text-lg my-1"></p>
+        <p id="lastUpdated" class="text-sky-700 text-sm my-1"></p>
+        <div class="flex items-center bg-sky-400 rounded-lg p-4 my-4">
+            <img src="" alt="icon" id="weatherIcon" class="w-16 h-16 mr-4">
+            <p id="condition" class="text-sky-900 text-lg font-semibold"></p>
+        </div>
+        <p id="tempCelcius" class="text-sky-900 my-2">Temperatura: <span class="font-semibold">--</span>°C</p>
+        <p id="feelslikeCelcius" class="text-sky-900 my-2">Sensação Térmica: <span class="font-semibold">--</span>°C</p>
+        <p id="windKph" class="text-sky-900 my-2">Vento: <span class="font-semibold">--</span> km/h</p>
+        <p id="humidity" class="text-sky-900 my-2">Umidade: <span class="font-semibold">--</span>%</p>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
